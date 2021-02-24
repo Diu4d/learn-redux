@@ -1,9 +1,17 @@
 import React from 'react'
 
-export default class ComB extends React.Component{
+import { connect } from 'react-redux'
+class ComB extends React.Component{
   render(){
     return(
-      <div>1</div>
+      <div>{this.props.count}</div>
     )
   }
 }
+
+const mapStateToProps = state => {
+  console.log('comb:',state);
+  return state
+}
+
+export default connect(mapStateToProps)(ComB)
